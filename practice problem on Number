@@ -1,0 +1,352 @@
+#Q1.Write a program to reverse an integer in Python
+
+n=int(input('enter n:'))
+print('reverse is: ', str(n)[::-1])
+enter n:6478
+reverse is:  8746
+
+
+
+#Q2.Write a program in Python to check whether an integer is Armstrong number or not.
+
+n=int(input('enter n: '))
+s=n
+l=len(str(n))
+sum1=0
+while n!=0:
+    r=n%10
+    sum1=sum1+(r**l)
+    n=n//10
+print('sum of digits of n: ',sum1)
+if sum1==s:
+    print(s,'is Armstrong number')
+else:
+    print(s,'is not an Armstrong number')
+enter n: 347
+sum of digits of n:  434
+347 is not an Armstrong number
+
+
+
+#Q3.Write a program in Python to check given number is prime or not.
+
+n=int(input('enter n: '))
+
+if n>1:
+    for i in range(2,n):
+        if n%i==0:
+            print('not Prime')
+            break
+    else:
+        print(n,'is Prime')
+            
+else:
+    print(n, 'is not prime')
+enter n: 76
+not Prime
+
+
+
+#Q4.Write a program in Python to print the Fibonacci series using iterative method.
+
+n=int(input('enter range:'))
+num=0
+num1=0
+num2=1
+
+i=0
+while i<n:
+    print(num1)
+    num=num1+num2
+    num1=num2
+    num2=num
+    i=i+1
+    
+    
+enter range:6
+0
+1
+1
+2
+3
+5
+
+
+
+#Q5.Fibonacci series program in python using recursive method
+
+def rec_fib(n):
+    if n<=1:
+        return n
+    else:
+        return (rec_fib(n-1)+rec_fib(n-2))
+    
+n1=int(input('enter range: '))
+for i in range(n1):
+    print(rec_fib(i))
+enter range: 7
+0
+1
+1
+2
+3
+5
+8
+
+
+
+#Q6.Python program for palindrome using an iterative method
+
+n=int(input('enter n: '))
+k=str(n)[::-1]
+j=int(k)
+if n==j:
+    print('palindrome')
+else:
+    print('not Palindrome')
+enter n: 1221
+palindrome
+#Python Program to Find the max of 3 numbers
+
+n1=int(input('n1:'))
+n2=int(input('n2:'))
+n3=int(input('n3:'))
+list=[n1,n2,n3]
+print('max no. is: ', max(list))
+n1:6
+n2:7
+n3:4
+max no. is:  7
+
+
+
+#Q7.Write a program in Python to check if a number is binary?
+
+B=input('enter input: ')
+b = '10'
+count = 0
+for char in B:
+    if char not in b:
+        count = 1
+        break
+    else:
+        pass
+if count:
+    print(B,"is not a binary string")
+else:
+    print(B,"is a binary string")
+enter input: 01111
+01111 is a binary string
+
+
+
+#Q8.Write a program in Python to find sum of digits of a number using recursion?
+
+def sum(n):
+    rec=0
+    for i in n:
+        rec=rec+int(i)
+    return rec
+        
+n=input('enter n:')
+sum(n)
+enter n:456
+15
+
+
+
+#Q.9Write a program in Python to swap two numbers without using third variable?
+
+a=input('num1: ')
+b=input('num2: ')
+a,b=b,a
+print('num1 after swap:',a)
+print('num2 after swap:',b)
+num1: 6
+num2: 8
+num1 after swap: 8
+num2 after swap: 6
+#Write a program in Python to swap two numbers using third variable?
+
+a=input('num1: ')
+b=input('num2: ')
+temp=a
+a=b
+b=temp
+
+print('num1 after swap:',a)
+print('num2 after swap:',b)
+num1: 4
+num2: 9
+num1 after swap: 9
+num2 after swap: 4
+
+
+
+#Q10.Write a program in Python to find prime factors of a given integer
+
+n=int(input("Enter an integer:"))
+print("Factors are:")
+i=1
+while(i<=n):
+    k=0
+    if(n%i==0):
+        j=1
+        while(j<=i):
+            if(i%j==0):
+                k=k+1
+            j=j+1
+        if(k==2):
+            print(i)
+    i=i+1
+Enter an integer:80
+Factors are:
+2
+5
+
+
+
+#Q11.Write a program in Python to add two integer without using arithmetic operator?
+def add(a, b):
+    if a!=b:
+        return (a*a-b*b)/(a-b)
+    else:
+        return 2*a
+    
+a=int(input('first int:'))
+b=int(input('second int:'))
+c=add(a,b)
+print('a+b=',c)
+first int:8
+second int:10
+a+b= 18.0
+
+
+
+#Q12.Write a program in Python to find given number is perfect or not?
+
+n=int(input('enter n: '))
+def fact(n):
+    i=1
+    sum=0
+    for i in range(1,n):
+        if n%i==0:
+            print('fact of n: ', i)
+            sum=sum+i
+            i+=1
+    print('sum of fact: ',sum)
+
+    if sum==n:
+        print(n,'is perfect no.')
+        
+    else:
+        print(n,'is not perfect number')
+            
+fact(n)
+enter n: 56
+fact of n:  1
+fact of n:  2
+fact of n:  4
+fact of n:  7
+fact of n:  8
+fact of n:  14
+fact of n:  28
+sum of fact:  64
+56 is not perfect number
+
+
+
+#Q13.Python Program to find the Average of numbers
+
+l=[]
+o=int(input('enter len of l: '))
+
+for n in range(o):
+    n=float(input('enter n: '))
+    m=l.append(n)
+print('l:',l)                           #create list of given numbers
+   
+
+sum=0
+for i in range(len(l)):
+    sum=sum+l[i]
+print('sum of all l elements:', sum)                 #sum of every element from list
+
+avg=sum/len(l)
+print('average of numbers: ',avg)  #print average of given numbers
+        
+    
+enter len of l: 5
+enter n: 34
+enter n: 56
+enter n: 44
+enter n: 66
+enter n: 34
+l: [34.0, 56.0, 44.0, 66.0, 34.0]
+sum of all l elements: 234.0
+average of numbers:  46.8
+
+
+
+#Q14.Python Program to calculate factorial using iterative method.
+
+n=int(input('enter n: '))
+f=1
+if n>1:
+    for i in range(1,n+1):
+        f=f*i
+        i=i+1
+    print(f)
+
+if n==1 or n==0:
+    print(1)
+enter n: 8
+40320
+
+
+
+#Q15.Python Program to calculate factorial using recursion.
+
+def fact(n):
+    if n<=1:
+        return 1
+    else:
+        return n*fact(n-1)
+
+n=int(input("enter n: "))
+fact(n)
+enter n: 5
+120
+
+
+
+#Q16.Python Program to check a given number is even or odd.
+
+n=int(input('enter n: '))
+if n%2==0:
+    print(n,'is even')
+else:
+    print(n,'is odd')
+enter n: 56
+56 is even
+
+
+
+#Q17.Python program to print first n Prime Number
+
+
+def isprime(n):
+    if (n==0 or n==1):
+        return False
+    
+    for i in range(2,n):
+        if n%i==0:
+            return False
+    return True 
+
+N=int(input('enter n: '))    
+for i in range(1, N+1):
+    if isprime(i):
+        print(i, end=" ")
+enter n: 45
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 
